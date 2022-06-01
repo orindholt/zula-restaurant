@@ -1,6 +1,6 @@
 import Layout from "../templates/Layout";
 import MenuSlide from "../components/menu-slide/MenuSlide";
-
+import TableBooking from "../components/table/TableBooking";
 const Home = () => {
 	return (
 		<Layout className="text-center">
@@ -19,6 +19,7 @@ const Home = () => {
 			<p className="text-center mt-4 ">
 				Hos Zula kommer du til at opleve mere end blot mad.
 			</p>
+			<TableBooking />
 			<MenuSlide />
 		</Layout>
 	);
