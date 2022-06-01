@@ -4,10 +4,11 @@ import Menu from "./Menu";
 import About from "./About";
 import Contact from "./Contact";
 import Header from "../templates/Header";
+import Footer from "../components/footer/Footer";
 
 const App = () => {
 	return (
-		<div className="App">
+		<div className="App flex flex-col">
 			<Router>
 				<Header />
 				<Routes>
@@ -16,6 +17,7 @@ const App = () => {
 					<Route path="/about" element={<About />} />
 					<Route path="/contact" element={<Contact />} />
 				</Routes>
+				<Footer />
 			</Router>
 		</div>
 	);

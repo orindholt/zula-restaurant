@@ -1,8 +1,10 @@
+import Layout from "../templates/Layout";
+
 const Contact = () => {
 	return (
-		<div>
+		<Layout className="text-center">
 			<h1 className="text-4xl font-bold">Contact</h1>
-		</div>
+		</Layout>
 	);
 };
 

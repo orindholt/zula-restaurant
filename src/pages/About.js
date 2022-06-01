@@ -1,8 +1,10 @@
+import Layout from "../templates/Layout";
+
 const About = () => {
 	return (
-		<div>
+		<Layout className="text-center">
 			<h1 className="text-4xl font-bold">About</h1>
-		</div>
+		</Layout>
 	);
 };
 
