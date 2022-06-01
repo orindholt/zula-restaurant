@@ -8,7 +8,7 @@ import { IoChevronForward, IoChevronBack } from "react-icons/io5";
 
 const MenuSlide = () => {
 	return (
-		<div className="mt-10 max-w-4xl mx-auto">
+		<div className="mt-10 max-w-3xl mx-auto">
 			<Swiper
 				effect={"coverflow"}
 				grabCursor={true}
