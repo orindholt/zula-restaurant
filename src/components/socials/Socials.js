@@ -1,4 +1,4 @@
-import Icon from "../nav/icons/icon";
+import Icon from "../icons/Icon";
 import { IoLogoFacebook, IoLogoInstagram } from "react-icons/io5";
 
 const Socials = () => {

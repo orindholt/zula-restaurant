@@ -1,10 +1,11 @@
+import Layout from "../templates/Layout";
 import MenuSlide from "../components/menu-slide/MenuSlide";
 
 const Home = () => {
 	return (
-		<div className="home content">
+		<Layout className="text-center">
 			<h3 className="text-4xl font-bold">Home</h3>
-			<h2 className="text-center ">Well com to Zula</h2>
+			<h2 className="text-center ">Welcome to Zula</h2>
 			<div>
 				<img
 					className="zula-icon mx-auto mt-4 font-bold"
@@ -18,7 +19,8 @@ const Home = () => {
 			<p className="text-center mt-4 ">
 				Hos Zula kommer du til at opleve mere end blot mad.
 			</p>
-		</div>
+			<MenuSlide />
+		</Layout>
 	);
 };
 

@@ -8,6 +8,7 @@ const Icon = ({ icon = <IoAddCircle />, anchor }) => {
 			className={`${containerClasses} hover:bg-red-normal hover:text-white transition-colors`}
 			href={anchor}
 			target="_blank"
+			rel="noreferrer"
 		>
 			{icon}
 		</a>
