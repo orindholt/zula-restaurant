@@ -1,3 +1,5 @@
+import MenuSlide from "../components/menu-slide/MenuSlide";
+
 const Home = () => {
 	return (
 		<div className="home content">
