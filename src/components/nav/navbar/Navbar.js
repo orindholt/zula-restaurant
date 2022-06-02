@@ -9,7 +9,7 @@ const Navbar = () => {
 				<Logo className="sm:mr-auto sm:ml-0 mx-auto" />
 				<ul className="flex sm:justify-start justify-center items-center text-lg font-semibold gap-6">
 					<GenericButton
-						anchor="/"
+						anchor="/table"
 						caption="Book a table"
 						className="rounded-md !py-0.5 !px-2"
 					/>
