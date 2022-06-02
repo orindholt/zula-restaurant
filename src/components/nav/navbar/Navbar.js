@@ -1,3 +1,4 @@
+import GenericButton from "../../button/GenericButton";
 import Logo from "../../icons/Logo";
 import NavItem from "./NavItem";
 
@@ -7,10 +8,9 @@ const Navbar = () => {
 			<div className="flex flex-col sm:flex-row">
 				<Logo className="sm:mr-auto sm:ml-0 mx-auto" />
 				<ul className="flex sm:justify-start justify-center items-center text-lg font-semibold gap-6">
-					<NavItem
-						text="Book a table"
-						to="/"
-						className="rounded-md bg-red-normal px-2 py-0.5 hover:!text-white"
+					<GenericButton
+						caption="Book a table"
+						className="rounded-md !py-0.5 !px-2"
 					/>
 					<NavItem text="Home" to="/" />
 					<NavItem text="Menu" to="/menu" />
