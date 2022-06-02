@@ -9,7 +9,7 @@ const GenericButton = ({
 }) => {
 	return anchor ? (
 		<Link
-			to="/"
+			to={anchor}
 			className={`bg-red-normal hover:bg-red-dark hover:scale-105 text-white font-bold py-2 px-4 rounded min-w-fit transition-all ${className}`}
 		>
 			{caption}
