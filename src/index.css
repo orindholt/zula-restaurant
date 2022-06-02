@@ -13,6 +13,12 @@ body {
 		@apply p-4 border-2 border-gray-300 rounded-lg;
 	}
 }
+@layer utilities {
+	.grid-rows-1fr {
+		grid-auto-rows: 1fr;
+	}
+}
+
 @layer components {
 	.book-table {
 		@apply p-4 border-2 border-gray-300 rounded-lg;
