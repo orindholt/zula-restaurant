@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Slide from "./slide/Slide";
 import { products } from "../../util/products";
-import NavButton from "./slide/NavButton";
+import NavButton from "./NavButton";
 import { IoChevronForward, IoChevronBack } from "react-icons/io5";
 
 const MenuSlide = () => {
