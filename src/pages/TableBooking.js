@@ -1,5 +1,3 @@
-// create a page that used to book a restaurant table
-
 import React from "react";
 import Layout from "../templates/Layout";
 const TableBooking = () => {
@@ -7,7 +5,7 @@ const TableBooking = () => {
 		<Layout>
 			<div className="table-booking text-center">
 				<h1>TableBooking</h1>
-				<p>here you can build your table</p>
+				<p>here you can book your table</p>
 				<form className="grid grid-cols-2 gap-4">
 					<div className="flex flex-col ">
 						<label>Name</label>
@@ -82,7 +80,7 @@ const TableBooking = () => {
 						className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded cursor-pointer col-span-2 w-fit justify-self-end"
 						type="submit"
 					>
-						Submit
+						Book
 					</button>
 				</form>
 			</div>
