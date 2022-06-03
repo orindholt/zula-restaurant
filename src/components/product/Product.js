@@ -1,10 +1,12 @@
 import { AnimatePresence, motion as m } from "framer-motion";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { cartContext } from "../../util/cartContext";
 import GenericButton from "../button/GenericButton";
 import LightBox from "./LightBox";
 
 const Product = ({ product }) => {
 	const [lightBox, setLightBox] = useState(false);
+	const { contents, setContents } = useContext(cartContext);
 	const { name, price, image } = product.acf;
 	const { category } = product;
 
@@ -15,6 +17,10 @@ const Product = ({ product }) => {
 
 	const toggleLightBox = () => {
 		setLightBox(!lightBox);
+	};
+
+	const addToCart = (product) => {
+		setContents(contents.length ? [...contents, product] : [product]);
 	};
 
 	return (
@@ -35,7 +41,10 @@ const Product = ({ product }) => {
 						className="rounded-sm shadow-lg cursor-pointer"
 						onClick={toggleLightBox}
 					/>
-					<GenericButton caption="Add to cart" />
+					<GenericButton
+						caption="Add to cart"
+						click={() => addToCart(product)}
+					/>
 				</div>
 			</m.li>
 		</>
