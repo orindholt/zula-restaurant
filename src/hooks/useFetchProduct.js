@@ -2,8 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const useFetchProduct = (endpoint = "product", reqType = "get") => {
-	const reqUrl = `http://localhost:8012/wordpress/wp-json/wp/v2/${endpoint}`;
-	const storageKey = "data";
+	const reqUrl = `https://codeforcareer.dk/wp-json/wp/v2/${endpoint}`;
+	const storageKey = endpoint;
+	console.log(reqUrl);
 	const storageData = localStorage.getItem(storageKey);
 	const [data, setData] = useState(
 		storageData ? JSON.parse(storageData) : null
@@ -22,7 +23,7 @@ const useFetchProduct = (endpoint = "product", reqType = "get") => {
 			localStorage.setItem(storageKey, JSON.stringify(data));
 	}, [data, storageData]);
 
-	return data && data.data.sort((a, b) => a.acf.name.localeCompare(b.acf.name));
+	return data && data.data;
 };
 
 export default useFetchProduct;

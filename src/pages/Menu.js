@@ -7,9 +7,11 @@ import GenericButton from "../components/button/GenericButton";
 
 const Menu = () => {
 	const data = useFetchProduct();
+	console.log(data);
+	const categories = useFetchProduct("categories");
 
 	const refreshProducts = () => {
-		localStorage.removeItem("data");
+		localStorage.clear();
 		window.location.reload();
 	};
 
@@ -29,7 +31,17 @@ const Menu = () => {
 					className="grid grid-cols-2 md:grid-cols-3 grid-rows-1fr gap-6 md:gap-5 lg:gap-7 xl:gap-10 mt-6"
 				>
 					{data.map((product, i) => {
-						return <Product product={product.acf} key={i} />;
+						return (
+							<Product
+								product={{
+									...product,
+									category: product.categories
+										? categories[product.categories[0]].name
+										: null,
+								}}
+								key={i}
+							/>
+						);
 					})}
 				</m.ul>
 			) : (

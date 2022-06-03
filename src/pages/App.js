@@ -7,10 +7,13 @@ import Header from "../templates/Header";
 import Footer from "../components/footer/Footer";
 import TableBooking from "./TableBooking";
 import CheckOut from "./CheckOut";
+import ScrollToTop from "../util/SlideToTop";
+
 const App = () => {
 	return (
 		<div className="App flex flex-col">
 			<Router>
+				<ScrollToTop />
 				<Header />
 				<Routes>
 					<Route path="/" element={<Home />} />

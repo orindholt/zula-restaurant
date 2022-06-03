@@ -10,6 +10,7 @@ import Loader from "../loader/Loader";
 
 const MenuSlide = () => {
 	const data = useFetchProduct();
+
 	return data ? (
 		<m.div
 			initial={{ opacity: 0 }}
