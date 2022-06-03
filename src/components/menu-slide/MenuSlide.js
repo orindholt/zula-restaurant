@@ -1,18 +1,28 @@
 // create slider menu component with items that can have arrow icon to go back and forward
-import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { motion as m } from "framer-motion";
 import "swiper/css";
-import "swiper/css/free-mode";
 import Slide from "./slide/Slide";
+import NavButton from "./NavButton";
+import { IoChevronForward, IoChevronBack } from "react-icons/io5";
+import useDbFetch from "../../hooks/useDbFetch";
+import Loader from "../loader/Loader";
+
 const MenuSlide = () => {
-	return (
-		<div className="menu-slide flex mt-10 gap-2 p-4 m-4 max-w-3xl">
+	const data = useDbFetch();
+
+	return data ? (
+		<m.div
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			className="mt-10 max-w-3xl"
+		>
 			<Swiper
 				effect={"coverflow"}
 				grabCursor={true}
 				centeredSlides={true}
-				spaceBetween={70}
-				slidesPerView={"2"}
+				spaceBetween={20}
+				slidesPerView={"3"}
 				loop={true}
 				loopFillGroupWithBlank={true}
 				coverflowEffect={{
@@ -22,47 +32,22 @@ const MenuSlide = () => {
 					modifier: 1,
 				}}
 			>
-				<SwiperSlide>
-					<Slide image="/assets/products/abizar.jpeg" />
-				</SwiperSlide>
-				<SwiperSlide>
-					<Slide image="/assets/products/bozena-shiro.jpeg" />
-				</SwiperSlide>
-				<SwiperSlide>
-					<Slide image="/assets/products/derho.jpeg" />
-				</SwiperSlide>
-				<SwiperSlide>
-					<Slide image="/assets/products/fetfet-zegni.jpeg" />
-				</SwiperSlide>
-				<SwiperSlide>
-					<Slide image="/assets/products/fetfet.jpeg" />
-				</SwiperSlide>
-				<SwiperSlide>
-					<Slide image="/assets/products/hamli-besega.jpeg" />
-				</SwiperSlide>
-				<SwiperSlide>
-					<Slide image="/assets/products/tebsi.jpeg" />
-				</SwiperSlide>
-				<SwiperSlide>
-					<Slide image="/assets/products/temtemo.jpeg" />
-				</SwiperSlide>
-				<SwiperSlide>
-					<Slide image="/assets/products/vega-shiro.jpeg" />
-				</SwiperSlide>
-				<SwiperSlide>
-					<Slide image="/assets/products/vegetarisk-kombination.jpeg" />
-				</SwiperSlide>
-				<SwiperSlide>
-					<Slide image="/assets/products/zegeni.jpeg" />
-				</SwiperSlide>
-				<SwiperSlide>
-					<Slide image="/assets/products/zelzel-tebsi.jpeg" />
-				</SwiperSlide>
-				<SwiperSlide>
-					<Slide image="/assets/products/zula-special.jpeg" />
-				</SwiperSlide>
+				{
+					// product loop
+					data.map((product, i) => {
+						return (
+							<SwiperSlide key={i}>
+								<Slide image={product.acf.image} price={product.acf.price} />
+							</SwiperSlide>
+						);
+					})
+				}
+				<NavButton icon={<IoChevronBack />} forward={false} />
+				<NavButton icon={<IoChevronForward />} forward={true} />
 			</Swiper>
-		</div>
+		</m.div>
+	) : (
+		<Loader />
 	);
 };
 
