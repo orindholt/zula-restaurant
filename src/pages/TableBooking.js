@@ -4,7 +4,7 @@ const TableBooking = () => {
 	return (
 		<Layout>
 			<div className="table-booking text-center">
-				<h1>TableBooking</h1>
+				<h1 className="text-4xl font-bold text-center">Table Booking</h1>
 				<p>here you can book your table</p>
 				<form className="grid grid-cols-2 gap-4">
 					<div className="flex flex-col ">
