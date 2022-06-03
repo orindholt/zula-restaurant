@@ -1,5 +1,5 @@
 import { AnimatePresence, motion as m } from "framer-motion";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { cartContext } from "../../util/cartContext";
 import createNotification from "../../util/createNotification";
 import GenericButton from "../button/GenericButton";

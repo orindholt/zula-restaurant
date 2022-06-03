@@ -24,7 +24,7 @@ const LightBox = ({ product, addFunc, toggleFunc }) => {
 			onClick={toggleFunc}
 			className="fixed top-0 bottom-0 right-0 left-0 bg-black bg-opacity-80 backdrop-blur-md z-50 grid place-content-center px-3"
 		>
-			<m.div className="flex gap-4">
+			<m.div variants={productVariant} className="flex gap-4">
 				<img className="rounded-md shadow-sm" src={image} alt={name} />
 				<div className="text-white flex flex-col gap-2 text-left">
 					<h2 className="text-6xl font-bold">{name}</h2>

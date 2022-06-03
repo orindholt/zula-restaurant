@@ -1,12 +1,12 @@
 import { useContext, useState, useEffect } from "react";
 import GenericButton from "../components/button/GenericButton";
-import CartProduct from "../components/cart/CartProduct";
+import CartProduct from "../components/product/CartProduct";
 import Layout from "../templates/Layout";
 import { cartContext } from "../util/cartContext";
 import { motion as m } from "framer-motion";
 
 const Cart = () => {
-	const { contents, setContents } = useContext(cartContext);
+	const { contents } = useContext(cartContext);
 	const [totalPrice, setTotalPrice] = useState(0);
 
 	useEffect(() => {
@@ -46,18 +46,29 @@ const Cart = () => {
 						className="border-separate border-spacing-y-1"
 					>
 						<tbody>
-							{contents.map((product, i) => {
-								return <CartProduct product={product} key={i} />;
-							})}
+							{Array.from(new Set(contents.map((a) => a.id)))
+								.map((id) => {
+									return contents.find((a) => a.id === id);
+								})
+								.sort((a, b) =>
+									a.acf.name
+										.toLowerCase()
+										.localeCompare(b.acf.name.toLowerCase())
+								)
+								.map((product, i) => {
+									return <CartProduct product={product} key={i} />;
+								})}
 						</tbody>
 					</m.table>
 					<hr className="border-black my-4" />
-					<p className="text-xl text-right">Total: {totalPrice} kr</p>
-					<GenericButton
-						caption="Checkout"
-						anchor="/check"
-						className="max-w-fit"
-					/>
+					<div className="flex justify-between">
+						<GenericButton
+							caption="Checkout"
+							anchor="/check"
+							className="max-w-fit"
+						/>
+						<p className="text-xl text-right">Total: {totalPrice} kr</p>
+					</div>
 				</>
 			)}
 		</Layout>
