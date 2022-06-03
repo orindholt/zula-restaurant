@@ -8,9 +8,13 @@ import GenericButton from "../components/button/GenericButton";
 const Menu = () => {
 	const data = useFetchProduct();
 
+	const categories = useFetchProduct("categories");
+
 	const refreshProducts = () => {
-		localStorage.removeItem("data");
-		window.location.reload();
+		localStorage.clear();
+		setTimeout(() => {
+			window.location.reload();
+		}, 1000);
 	};
 
 	const menuListVariant = {
@@ -21,7 +25,7 @@ const Menu = () => {
 	return (
 		<Layout className="text-center">
 			<h1 className="text-4xl font-bold">Menu</h1>
-			{data ? (
+			{data && categories ? (
 				<m.ul
 					variants={menuListVariant}
 					initial="hidden"
@@ -29,7 +33,17 @@ const Menu = () => {
 					className="grid grid-cols-2 md:grid-cols-3 grid-rows-1fr gap-6 md:gap-5 lg:gap-7 xl:gap-10 mt-6"
 				>
 					{data.map((product, i) => {
-						return <Product product={product.acf} key={i} />;
+						return (
+							<Product
+								product={{
+									...product,
+									category: product.categories
+										? categories[product.categories[0]].name
+										: null,
+								}}
+								key={i}
+							/>
+						);
 					})}
 				</m.ul>
 			) : (

@@ -3,7 +3,7 @@ import Layout from "../templates/Layout";
 const Contact = () => {
 	return (
 		<Layout className="text-center ">
-			<div className="">
+			<div>
 				<h1 className="text-4xl font-bold text-center">Contact Zula</h1>
 				<p className="text-center mt-2">
 					Zula er en lille by i det centrale Eritrea.

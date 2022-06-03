@@ -5,9 +5,15 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-	@apply bg-tan font-base;
+@layer base {
+	body {
+		@apply bg-tan font-base;
+	}
+	ul, li {
+		list-style: none;
+	}
 }
+
 @layer components {
 	.contact-input {
 		@apply p-4 border-2 border-gray-300 rounded-lg;
@@ -21,6 +27,14 @@ body {
 
 @layer components {
 	.book-table {
+		@apply p-4 border-2 border-gray-300 rounded-lg;
+	}
+	.cart {
+		@apply relative after:w-4 after:h-4 after:rounded-full after:text-sm after:grid after:place-content-center after:pb-0.5 after:absolute after:bg-red-normal after:-top-2 after:-right-2 after:content-[attr(data-amount)];
+	}
+}
+@layer components {
+	.order-summary {
 		@apply p-4 border-2 border-gray-300 rounded-lg;
 	}
 }
