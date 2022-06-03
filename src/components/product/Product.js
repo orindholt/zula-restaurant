@@ -1,6 +1,7 @@
 import { AnimatePresence, motion as m } from "framer-motion";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { cartContext } from "../../util/cartContext";
+import createNotification from "../../util/createNotification";
 import GenericButton from "../button/GenericButton";
 import LightBox from "./LightBox";
 
@@ -21,12 +22,19 @@ const Product = ({ product }) => {
 
 	const addToCart = (product) => {
 		setContents(contents.length ? [...contents, product] : [product]);
+		createNotification("success", `${name} was added to the cart!`);
 	};
 
 	return (
 		<>
 			<AnimatePresence>
-				{lightBox && <LightBox product={product} toggleFunc={toggleLightBox} />}
+				{lightBox && (
+					<LightBox
+						product={product}
+						addFunc={addToCart}
+						toggleFunc={toggleLightBox}
+					/>
+				)}
 			</AnimatePresence>
 			<m.li variants={productVariant} className="flex flex-col">
 				<h3 className="font-bold text-xl leading-6">{name}</h3>

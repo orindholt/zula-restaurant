@@ -23,6 +23,9 @@
 	.grid-rows-1fr {
 		grid-auto-rows: 1fr;
 	}
+	.border-spacing-y-1 {
+		border-spacing: 0 1rem; 
+	}
 }
 
 @layer components {

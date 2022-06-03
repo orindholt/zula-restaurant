@@ -4,13 +4,15 @@ import GenericButton from "../components/button/GenericButton";
 
 const Home = () => {
 	return (
-		<Layout className="text-center items-center justify-around">
-			<h2 className="text-center text-lg mt-4 font-light">Welcome to Zula</h2>
+		<Layout className="text-center items-center justify-around bg-[url('/public/assets/header.jpg')] text-white">
 			<div>
+				<h2 className="text-center text-4xl mt-4 mb-1 font-light font-imbue">
+					Welcome to Zula
+				</h2>
 				<img
 					className="zula-icon mx-auto font-bold"
-					src="assets/zula_icon_01.png"
-					alt=""
+					src="assets/zula_icon_white_01.png"
+					alt="Zula Icon"
 				/>
 			</div>
 			<div>
@@ -23,7 +25,7 @@ const Home = () => {
 			</div>
 			<GenericButton
 				caption="Book a table"
-				anchor="/"
+				anchor="/check"
 				className="mx-auto mt-4"
 			/>
 			<MenuSlide />
