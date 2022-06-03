@@ -7,12 +7,14 @@ import GenericButton from "../components/button/GenericButton";
 
 const Menu = () => {
 	const data = useFetchProduct();
-	console.log(data);
+
 	const categories = useFetchProduct("categories");
 
 	const refreshProducts = () => {
 		localStorage.clear();
-		window.location.reload();
+		setTimeout(() => {
+			window.location.reload();
+		}, 1000);
 	};
 
 	const menuListVariant = {
@@ -23,7 +25,7 @@ const Menu = () => {
 	return (
 		<Layout className="text-center">
 			<h1 className="text-4xl font-bold">Menu</h1>
-			{data ? (
+			{data && categories ? (
 				<m.ul
 					variants={menuListVariant}
 					initial="hidden"
