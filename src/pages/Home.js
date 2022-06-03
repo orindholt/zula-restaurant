@@ -1,6 +1,7 @@
 import Layout from "../templates/Layout";
 import MenuSlide from "../components/menu-slide/MenuSlide";
 import GenericButton from "../components/button/GenericButton";
+
 const Home = () => {
 	return (
 		<Layout className="text-center items-center justify-around">
