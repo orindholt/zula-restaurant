@@ -24,3 +24,8 @@ body {
 		@apply p-4 border-2 border-gray-300 rounded-lg;
 	}
 }
+@layer components {
+	.order-summary {
+		@apply p-4 border-2 border-gray-300 rounded-lg;
+	}
+}
