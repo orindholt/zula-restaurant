@@ -1,16 +1,17 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import CartContextProvider from "../util/cartContext";
+import ScrollToTop from "../util/SlideToTop";
+import Header from "../templates/Header";
+import Footer from "../components/footer/Footer";
 import Home from "./Home";
 import Menu from "./Menu";
 import About from "./About";
 import Contact from "./Contact";
 import Thank from "./Thank";
 import CheckOut from "./CheckOut";
-import Header from "../templates/Header";
-import Footer from "../components/footer/Footer";
 import TableBooking from "./TableBooking";
-import ScrollToTop from "../util/SlideToTop";
 import Cart from "./Cart";
-import CartContextProvider from "../util/cartContext";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
 	return (
@@ -32,6 +33,11 @@ const App = () => {
 					<Footer />
 				</Router>
 			</CartContextProvider>
+			<ToastContainer
+				position="top-center"
+				autoClose={2000}
+				hideProgressBar={true}
+			/>
 		</div>
 	);
 };

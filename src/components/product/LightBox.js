@@ -11,7 +11,7 @@ const productVariant = {
 	shown: { scale: 1 },
 };
 
-const LightBox = ({ product, toggleFunc }) => {
+const LightBox = ({ product, addFunc, toggleFunc }) => {
 	const { name, price, image, desc } = product.acf;
 	const { category } = product;
 	return (
@@ -32,7 +32,11 @@ const LightBox = ({ product, toggleFunc }) => {
 					<p>{category}</p>
 					<hr />
 					<p className="text-2xl">{price} kr.</p>
-					<GenericButton caption="Add to cart" className="mt-auto text-2xl" />
+					<GenericButton
+						caption="Add to cart"
+						className="mt-auto text-2xl"
+						click={addFunc}
+					/>
 				</div>
 			</m.div>
 		</m.aside>

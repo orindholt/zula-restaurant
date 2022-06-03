@@ -23,7 +23,7 @@ const Home = () => {
 			</div>
 			<GenericButton
 				caption="Book a table"
-				anchor="/"
+				anchor="/check"
 				className="mx-auto mt-4"
 			/>
 			<MenuSlide />
