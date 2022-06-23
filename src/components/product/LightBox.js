@@ -35,7 +35,7 @@ const LightBox = ({ product, addFunc, toggleFunc }) => {
 					<GenericButton
 						caption="Add to cart"
 						className="mt-auto text-2xl"
-						click={addFunc}
+						click={() => addFunc(product)}
 					/>
 				</div>
 			</m.div>
