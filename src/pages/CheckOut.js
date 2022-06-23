@@ -1,7 +1,7 @@
 // create restaurant checkout page that will be used to order a food and drinks
 import React from "react";
 import Layout from "../templates/Layout";
-import GenericInput from "../components/check/GenericInput";
+import GenericInput from "../components/input/GenericInput";
 
 const CheckOut = () => {
 	return (

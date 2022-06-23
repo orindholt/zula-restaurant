@@ -1,14 +1,14 @@
 import Loader from "../components/loader/Loader";
 import Product from "../components/product/Product";
-import useFetchProduct from "../hooks/useFetchProduct";
+import useDbFetch from "../hooks/useDbFetch";
 import Layout from "../templates/Layout";
 import { motion as m } from "framer-motion";
 import GenericButton from "../components/button/GenericButton";
 
 const Menu = () => {
-	const data = useFetchProduct();
+	const data = useDbFetch();
 
-	const categories = useFetchProduct("categories");
+	const categories = useDbFetch("categories");
 
 	const refreshProducts = () => {
 		localStorage.clear();

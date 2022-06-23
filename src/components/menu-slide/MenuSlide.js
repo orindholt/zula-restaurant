@@ -5,11 +5,11 @@ import "swiper/css";
 import Slide from "./slide/Slide";
 import NavButton from "./NavButton";
 import { IoChevronForward, IoChevronBack } from "react-icons/io5";
-import useFetchProduct from "../../hooks/useFetchProduct";
+import useDbFetch from "../../hooks/useDbFetch";
 import Loader from "../loader/Loader";
 
 const MenuSlide = () => {
-	const data = useFetchProduct();
+	const data = useDbFetch();
 
 	return data ? (
 		<m.div
